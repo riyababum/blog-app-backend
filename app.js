@@ -53,6 +53,7 @@ app.post('/api/signup',(req,res)=>{
 });
 
 app.get('/api/article-list', async (req, res) => {
+    res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
     try {
        await ArticleInfo.find({ })
             .then(function (article) {
