@@ -52,9 +52,9 @@ app.post('/api/signup',(req,res)=>{
     })
 });
 
-app.get('/api/article-list', (req, res) => {
+app.get('/api/article-list', async (req, res) => {
     try {
-        ArticleInfo.find({ })
+       await ArticleInfo.find({ })
             .then(function (article) {
                 res.status(200).json(article);
             })
